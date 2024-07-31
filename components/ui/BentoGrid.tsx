@@ -1,17 +1,12 @@
 "use client"
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-
-// Also install this npm i --save-dev @types/react-lottie
-// import Lottie from "react-lottie";
-
+import Lottie from "react-lottie";
 import { cn } from "@/lib/utils";
-
-
-// import { BackgroundGradientAnimation } from "./GradientBg";
-// import GridGlobe from "./GridGlobe";
-// import animationData from "@/data/confetti.json";
+import { BackgroundGradientAnimation } from "./GradientBg";
 import ShimmerButton from "./ShimmerButton";
+import GridGlobe from "./GridGlobe";
+import animationData from "@/data/confetti.json";
 
 export const BentoGrid = ({
   className,
@@ -23,8 +18,8 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        // change gap-4 to gap-8, change grid-cols-3 to grid-cols-5, remove md:auto-rows-[18rem], add responsive code
-        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
+       
+        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-8 lg:gap-8 mx-auto",
         className
       )}
     >
@@ -36,12 +31,14 @@ export const BentoGrid = ({
 export const BentoGridItem = ({
   className,
   id,
+  header,
   title,
   description,
   img,
   imgClassName,
   titleClassName,
   spareImg,
+  icon
 }: {
   className?: string;
   id: number;
@@ -51,28 +48,35 @@ export const BentoGridItem = ({
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
+  header?: any;
+  icon?: any;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["NextJS", "MongoDB", "Firebase"];
+  const leftLists = ["Next JS", "Node JS","MongoDB"]; 
+  const rightLists = ["AWS", "GCP", "Azure"];
 
   const [copied, setCopied] = useState(false);
 
   const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    // animationData: animationData,
+    loop: false, // Set loop to false
+    autoplay: false,
+    animationData: animationData, // Add the animationData property
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
+    const text = "info.djscompute@gmail.com";
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false); // Reset the copied state after a delay
+      }, 2000); // Adjust the delay as needed
+    });
   };
 
   return (
+    <>
     <div
       className={cn(
         // remove p-4 rounded-3xl dark:bg-black dark:border-white/[0.2] bg-white  border border-transparent, add border border-white/[0.1] overflow-hidden relative
@@ -87,6 +91,7 @@ export const BentoGridItem = ({
           "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
       }}
     >
+
       {/* add img divs */}
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
@@ -106,17 +111,16 @@ export const BentoGridItem = ({
             <img
               src={spareImg}
               alt={spareImg}
-              //   width={220}
               className="object-cover object-center w-full h-full"
             />
           )}
         </div>
-        {/* {id === 6 && (
+        {id === 6 && (
           // add background animation , remove the p tag
-          // <BackgroundGradientAnimation>
-          //   <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
-          // </BackgroundGradientAnimation>
-        )} */}
+          <BackgroundGradientAnimation>
+            <div className="relative z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
+          </BackgroundGradientAnimation>
+        )}
 
         <div
           className={cn(
@@ -137,18 +141,17 @@ export const BentoGridItem = ({
           </div>
 
           {/* for the github 3d globe */}
-          {/* {id === 2 && <GridGlobe />} */}
+          {id === 2 && <GridGlobe />}
 
-          {/* Tech stack list div */}
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
+            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2 font-bold">
               {/* tech stack lists */}
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    lg:opacity-100 rounded-lg text-center bg-[#10132E] text-purple font-bold"
                   >
                     {item}
                   </span>
@@ -171,20 +174,15 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="mt-5 relative">
-              {/* button border magic from tailwind css buttons  */}
-              {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-              {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-              {/* add handleCopy() for the copy the text */}
               <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
+                className={`absolute -bottom-5 right-0 ${copied ? "block" : "hidden"
                   }`}
               >
-                {/* <img src="/confetti.gif" alt="confetti" /> */}
-                {/* <Lottie options={defaultOptions} height={200} width={400} /> */}
+                <Lottie options={defaultOptions} height={200} width={400} isStopped={!copied} />
               </div>
 
               <ShimmerButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
+                title={copied ? "Email is Copied!" : "Copy our email address"}
                 icon={<IoCopyOutline />}
                 position="left"
                 handleClick={handleCopy}
@@ -195,5 +193,6 @@ export const BentoGridItem = ({
         </div>
       </div>
     </div>
+    </>
   );
 };
