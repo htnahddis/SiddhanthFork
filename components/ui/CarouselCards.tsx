@@ -100,7 +100,7 @@ const MachineLearningContent = () => {
               </span>{" "}
               Machine learning is revolutionizing industries by enabling systems
               to learn from data. Explore algorithms such as decision trees,
-              neural networks, and deep learning models. Whether it's building
+              neural networks, and deep learning models. Whether its building
               predictive models or implementing AI-powered solutions, you will
               gain hands-on experience with the most sought-after skills in tech
               today.
