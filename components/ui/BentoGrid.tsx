@@ -52,7 +52,7 @@ export const BentoGridItem = ({
   icon?: any;
 }) => {
   const leftLists = ["Next JS", "Node JS","MongoDB"]; 
-  const rightLists = ["AWS", "GCP", "Azure"];
+  const rightLists = ["Data Analysis", "React JS", "Hadoop"];
 
   const [copied, setCopied] = useState(false);
 

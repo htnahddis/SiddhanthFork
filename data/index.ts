@@ -65,3 +65,56 @@ export const gridItems =
   
 ];
 
+
+export const projects = [
+  {
+    id: 1,
+    title: "SVKM Hall Booking System",
+    des: "A streamlined system to manage hall bookings and events for SVKM institutions with real-time availability and scheduling.",
+    img: "/hall.png",
+    iconLists: ["/tail.svg", "/ts.svg",  "/fm.svg", "/re.svg"],
+    link: "/ui.svkmhall.com",
+  },
+  {
+    id: 2,
+    title: "Elysii - Real Estate Agency",
+    des: "A modern platform for real estate listings and customer management, providing seamless communication between agents and buyers.",
+    img: "/elysii.png",
+    iconLists: [ "/tail.svg", "/ts.svg", "/re.svg", "/c.svg"],
+    link: "/ui.elysii.com",
+  },
+  {
+    id: 3,
+    title: "Morgan Consultants - Architects and Interior Designer Services",
+    des: "Morgan Consultants offers personalized architectural and interior design services for homes and businesses with an interactive showcase.",
+    img: "/morgan-consultants.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    link: "/ui.morganconsultants.com",
+  },
+  {
+    id: 4,
+    title: "SVKM Bill Tracker System (Upcoming)",
+    des: "An upcoming system to track and manage bills and payments for SVKM institutions, ensuring transparency and efficient record-keeping.",
+    img: "/",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+    link: "/ui.svkmbilltracker.com",
+  },
+  {
+    id: 5,
+    title: "Ahir and Agarwal - Real Estate Agency (Upcoming)",
+    des: "A feature-rich platform for property buying, selling, and renting, designed to simplify the real estate process.",
+    img: "/",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/c.svg"],
+    link: "/ui.ahiragarwal.com",
+  },
+];
+
+
+export const ImageSliderImages = [
+  "./elysii.png",
+  "./hall.png",
+  "./morgan-consultants.png",
+  "./svkm-hall.png"
+];
+
+

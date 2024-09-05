@@ -1,4 +1,5 @@
 
+import { ThreeDCardDemo } from "@/components/ui/EventsCard";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import React from "react";
 import { FaAnchor, FaHome } from "react-icons/fa";
@@ -17,6 +18,7 @@ const page = () => {
       />
     </div>
 
+    <ThreeDCardDemo/>
     <hr className="my-8 w-full border-t border-gray-200 dark:border-gray-700" />
     <p className="py-4 font-mono">
       Check out <span className="text-purple">@DJS Compute</span>
