@@ -1,0 +1,24 @@
+name: Check Branch Name
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  check-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Validate branch name
+        run: |
+          BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}")
+          if [[ ! "$BRANCH_NAME" =~ ^[0-9]+--[a-zA-Z0-9_-]+$ ]]; then
+            echo "Branch name '$BRANCH_NAME' does not follow the pattern 'ISSUE_NO--DESCRIPTION'."
+            exit 1
+          fi
