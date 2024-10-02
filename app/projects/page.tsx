@@ -14,6 +14,7 @@ const page = () => {
           { name: "Home", link: "/", icon: <FaHome /> },
           { name: "Projects", link: "/projects", icon: <FaAnchor /> },
           { name: "Events", link: "/events", icon: <FaHome /> },
+          { name: "Team", link: "/team", icon: <FaHome /> },
         ]}
       />
     </div>
