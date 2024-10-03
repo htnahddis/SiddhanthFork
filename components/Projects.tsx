@@ -30,7 +30,7 @@ const Projects = () => {
                   <img src="/bg.png" alt="bgimg" />
                 </div>
                 <img
-                  src={item.img}
+                  src={item.img == "/" ? "/upcoming.png": item.img}
                   alt="upcoming"
                   className="z-10 absolute bottom-0"
                 />
