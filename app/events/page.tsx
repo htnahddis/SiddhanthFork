@@ -25,7 +25,7 @@ const page = () => {
       Check out <span className="text-purple">@DJS Compute</span>
     </p>
     <div className="mb-[3vw] flex space-x-[2vw]">
-  <a href="https://github.com/djscompute/compute-website" className="text-[3vh] border border-white rounded-full p-[1vh]
+  <a href="https://github.com/djscompute" className="text-[3vh] border border-white rounded-full p-[1vh]
    hover:scale-90">
     <FaGithub  />
   </a> 
