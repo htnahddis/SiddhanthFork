@@ -2,7 +2,7 @@
 import { CardDemo } from "@/components/ui/EventsCard";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import React from "react";
-import { FaAnchor, FaHome } from "react-icons/fa";
+import { FaAnchor, FaHome ,FaGithub,FaLinkedinIn,FaInstagram } from "react-icons/fa";
 
 
 const page = () => {
@@ -24,6 +24,18 @@ const page = () => {
     <p className="py-4 font-mono">
       Check out <span className="text-purple">@DJS Compute</span>
     </p>
+    <div className="mb-[3vw] flex space-x-[2vw]">
+  <a href="https://github.com/djscompute/compute-website" className="text-[3vh] border border-white rounded-full p-[1vh]
+   hover:scale-90">
+    <FaGithub  />
+  </a> 
+  <a href="https://www.linkedin.com/company/djscompute/posts/?feedView=all" className="text-[2.8vh]  hover:scale-90 border border-white rounded-full p-[1vh]">
+    <FaLinkedinIn />
+  </a> 
+  <a href="https://www.instagram.com/djscompute/" className="text-[3vh] border  hover:scale-90 border-white rounded-full p-[1vh]">
+    <FaInstagram />
+  </a> 
+</div>
   </main>
   );
 };
