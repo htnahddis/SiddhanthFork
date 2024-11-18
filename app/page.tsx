@@ -3,7 +3,7 @@ import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import Image from "next/image";
-import { FaAnchor, FaHome } from "react-icons/fa";
+import { FaAnchor, FaHome, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -23,9 +23,24 @@ export default function Home() {
       </div>
 
       <hr className="my-8 w-full border-t border-gray-200 dark:border-gray-700" />
-      <p className="py-4 font-mono">
+   <div className="flex space-x-4 ">
+
+      <p className="py-4 font-mono mb-5 ">
         Check out <span className="text-purple">@DJS Compute</span>
       </p>
+      <div className="h-8 w-px bg-gray-200 dark:bg-gray-700 my-4"></div>
+
+      {/* Social Icons */}
+        <a href="https://www.instagram.com/djscompute/" target="_blank" rel="noopener noreferrer">
+          <FaInstagram className="text-2xl text-purple hover:text-white mt-4" />
+        </a>
+        <a href="https://in.linkedin.com/company/djscompute" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin className="text-2xl text-purple hover:text-white mt-4" />
+        </a>
+        <a href="https://github.com/djscompute" target="_blank" rel="noopener noreferrer">
+          <FaGithub className="text-2xl text-purple hover:text-white mt-4" />
+        </a>
+      </div>
     </main>
   );
 }
