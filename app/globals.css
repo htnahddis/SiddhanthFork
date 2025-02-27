@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font for events card */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400&display=swap'); 
+
 @layer base {
   :root {
     --background: 0 0% 100%;

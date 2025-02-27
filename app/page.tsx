@@ -27,21 +27,24 @@ export default function Home() {
       </div>
 
       <hr className="my-8 w-full border-t border-gray-200 dark:border-gray-700" />
-      <p className="py-4 font-mono">
+   <div className="flex space-x-4 ">
+
+      <p className="py-4 font-mono mb-5 ">
         Check out <span className="text-purple">@DJS Compute</span>
       </p>
-      <div className="mb-[3vw] flex space-x-[2vw]">
-  <a href="https://github.com/djscompute/compute-website" className="text-[3vh] border border-white rounded-full p-[1vh]
-   hover:scale-90">
-    <FaGithub  />
-  </a> 
-  <a href="https://www.linkedin.com/company/djscompute/posts/?feedView=all" className="text-[2.8vh]  hover:scale-90 border border-white rounded-full p-[1vh]">
-    <FaLinkedinIn />
-  </a> 
-  <a href="https://www.instagram.com/djscompute/" className="text-[3vh] border  hover:scale-90 border-white rounded-full p-[1vh]">
-    <FaInstagram />
-  </a> 
-</div>
+      <div className="h-8 w-px bg-gray-200 dark:bg-gray-700 my-4"></div>
+
+      {/* Social Icons */}
+        <a href="https://www.instagram.com/djscompute/" target="_blank" rel="noopener noreferrer">
+          <FaInstagram className="text-2xl text-purple hover:text-white mt-4" />
+        </a>
+        <a href="https://in.linkedin.com/company/djscompute" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin className="text-2xl text-purple hover:text-white mt-4" />
+        </a>
+        <a href="https://github.com/djscompute" target="_blank" rel="noopener noreferrer">
+          <FaGithub className="text-2xl text-purple hover:text-white mt-4" />
+        </a>
+      </div>
     </main>
   );
 }
